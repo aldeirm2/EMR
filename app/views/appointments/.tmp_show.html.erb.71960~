@@ -1,0 +1,45 @@
+<p>
+  <b>Time slot:</b>
+  <%=h @appointment.time_slot %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%=h @appointment.priority %>
+</p>
+
+<p>
+  <b>Arrive date time:</b>
+  <%=h @appointment.arrive_date_time %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%=h @appointment.note %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @appointment.status %>
+</p>
+
+<p>
+  <b>Symptoms:</b>
+  <%=h @appointment.symptoms %>
+</p>
+
+<p>
+  <b>Doctor:</b>
+  <%=h @appointment.doctor %>
+</p>
+
+<p>
+  <b>Patient:</b>
+  <a href="/patients/#{@appointment.patient.id}">
+  <%=h @appointment.patient.name %> 
+  </a>
+</p>
+
+
+<%= link_to 'Edit', edit_patient_appointment(@patients, @appointment) %> |
+<%= link_to 'Back', patient_appointment_path(@patients) %>

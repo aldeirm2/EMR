@@ -1,0 +1,6 @@
+<h1>ABCD local GP</h1>
+<% if current_user %>
+<p>Hi <%=h current_user.username %>.</p>
+<% else %>
+<P>Please <%= link_to "Login", login_path %> to the system.</P>
+<% end %>

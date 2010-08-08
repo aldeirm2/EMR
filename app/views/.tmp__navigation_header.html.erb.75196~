@@ -1,0 +1,14 @@
+<% patients_url = "/patients"%>
+<% appointments_url = "/appointments"%>
+<% visits_url = "/visits"%>
+
+<div id="navigation_header">
+	<div id="main_link">
+		<%= link_to "Patients", patients_url %>
+		<%= link_to "Appointments", show_appointments_url %>
+	</div>
+	<div id="user_options">
+		<%= link_to "Logout", logout_path %>
+		<%= link_to "Create New User", newuser_path %>
+	</div>
+</div>

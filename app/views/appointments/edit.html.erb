@@ -1,0 +1,10 @@
+<h1>Editing appointment for <%=h @person.name %></h1>
+
+<%= render :partial =>  'appointment_form' %>
+
+<%= link_to 'Show', [@person, @appointment] %> |
+<% if params[:doctor_id]%>
+<%= link_to 'Back', doctor_appointments_path(@person) %>
+<% else %>
+<%= link_to 'Back', patient_appointments_path(@person) %>
+<% end %>

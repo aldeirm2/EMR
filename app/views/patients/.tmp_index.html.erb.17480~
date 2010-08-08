@@ -1,0 +1,60 @@
+<h1>Listing patients</h1>
+
+<table>
+  <tr>
+    <th>F name</th>
+    <th>M name</th>
+    <th>L name</th>
+    <th>Date of birth</th>
+    <th>Medical history</th>
+    <th>Address</th>
+    <th>Sex</th>
+    <th>Date of first admission</th>
+    <th>Universal id</th>
+    <th>Next of kin</th>
+    <th>Allergies</th>
+    <th>Family history</th>
+    <th>Blood type</th>
+    <th>Weight</th>
+    <th>Height</th>
+    <th>Bmi</th>
+    <th>Occupation</th>
+    <th>Current medication</th>
+    <th>Tel number</th>
+    <th>Mobile number</th>
+    <th>Email</th>
+  </tr>
+
+<% @patients.each do |patient| %>
+  <tr>
+    <td><%=h patient.f_name %></td>
+    <td><%=h patient.m_name %></td>
+    <td><%=h patient.l_name %></td>
+    <td><%=h patient.date_of_birth %></td>
+    <td><%=h patient.medical_history %></td>
+    <td><%=h patient.address %></td>
+    <td><%=h patient.sex %></td>
+    <td><%=h patient.date_of_first_admission %></td>
+    <td><%=h patient.universal_ID %></td>
+    <td><%=h patient.next_of_kin %></td>
+    <td><%=h patient.allergies %></td>
+    <td><%=h patient.family_history %></td>
+    <td><%=h patient.blood_type %></td>
+    <td><%=h patient.weight %></td>
+    <td><%=h patient.height %></td>
+    <td><%=h patient.bmi %></td>
+    <td><%=h patient.occupation %></td>
+    <td><%=h patient.current_medication %></td>
+    <td><%=h patient.tel_number %></td>
+    <td><%=h patient.mobile_number %></td>
+    <td><%=h patient.email %></td>
+    <td><%= link_to 'Show', patient %></td>
+    <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+    <td><%= link_to 'Destroy', patient, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New patient', new_patient_path %>

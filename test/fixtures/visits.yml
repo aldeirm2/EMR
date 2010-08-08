@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  symptoms: MyText
+  provisional_diagnostics: MyText
+  lab_test: MyText
+  final_diagnostics: MyText
+  method_of_treatment: MyText
+  medication_perscribed: MyText
+  comments: MyText
+  visit_time: 2010-07-30 14:42:42
+  follow_up: false
+  end_time: 2010-07-30 14:42:42
+  patient_id: 1
+
+two:
+  symptoms: MyText
+  provisional_diagnostics: MyText
+  lab_test: MyText
+  final_diagnostics: MyText
+  method_of_treatment: MyText
+  medication_perscribed: MyText
+  comments: MyText
+  visit_time: 2010-07-30 14:42:42
+  follow_up: false
+  end_time: 2010-07-30 14:42:42
+  patient_id: 1

@@ -1,0 +1,125 @@
+<p>
+	<b>Patient Photo</b>
+	<% if @patient.has_photo? %>
+		<%= image_tag @patient.photo_path %>
+	<% else %>
+		Please Take Patient Photo
+	<% end %>
+</p>
+
+<p>
+  <b>ID:</b>
+  <%=h @patient.id %>
+</p>
+
+<p>
+  <b>F name:</b>
+  <%=h @patient.f_name %>
+</p>
+
+<p>
+  <b>M name:</b>
+  <%=h @patient.m_name %>
+</p>
+
+<p>
+  <b>L name:</b>
+  <%=h @patient.l_name %>
+</p>
+
+<p>
+  <b>Date of birth:</b>
+  <%=h @patient.date_of_birth %>
+</p>
+
+<p>
+  <b>Medical history:</b>
+  <%=h @patient.medical_history %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @patient.address %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%=h @patient.sex %>
+</p>
+
+<p>
+  <b>Date of first admission:</b>
+  <%=h @patient.date_of_first_admission %>
+</p>
+
+<p>
+  <b>Universal id:</b>
+  <%=h @patient.universal_ID %>
+</p>
+
+<p>
+  <b>Next of kin:</b>
+  <%=h @patient.next_of_kin %>
+</p>
+
+<p>
+  <b>Allergies:</b>
+  <%=h @patient.allergies %>
+</p>
+
+<p>
+  <b>Family history:</b>
+  <%=h @patient.family_history %>
+</p>
+
+<p>
+  <b>Blood type:</b>
+  <%=h @patient.blood_type %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%=h @patient.weight %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%=h @patient.height %>
+</p>
+
+<p>
+  <b>Bmi:</b>
+  <%=h @patient.bmi %>
+</p>
+
+<p>
+  <b>Occupation:</b>
+  <%=h @patient.occupation %>
+</p>
+
+<p>
+  <b>Current medication:</b>
+  <%=h @patient.current_medication %>
+</p>
+
+<p>
+  <b>Tel number:</b>
+  <%=h @patient.tel_number %>
+</p>
+
+<p>
+  <b>Mobile number:</b>
+  <%=h @patient.mobile_number %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @patient.email %>
+</p>
+
+<% if(can?) %>
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<% end %>
+<%= link_to 'Appointments', patient_appointments_path(@patient) %> |
+<%= link_to 'Previous Visits', patient_visits_path(@patient) %> |
+<%= link_to 'Back', patients_path %>

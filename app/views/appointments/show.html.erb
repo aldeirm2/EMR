@@ -1,0 +1,58 @@
+<p>
+  <b>Date:</b>
+  <%=h @appointment.date_of_appointment %>
+</p>
+
+<p>
+  <b>Start Time:</b>
+  <%=h @appointment.start_time.strftime("at %H:%M") %>
+</p>
+
+<p>
+  <b>End Time:</b>
+  <%=h @appointment.end_time.strftime("at %H:%M") %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%=h @appointment.priority %>
+</p>
+
+<p>
+  <b>Arrive date time:</b>
+  <%=h @appointment.arrive_date_time %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%=h @appointment.note %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @appointment.status %>
+</p>
+
+<p>
+  <b>Symptoms:</b>
+  <%=h @appointment.symptoms %>
+</p>
+
+<p>
+  <b>Doctor:</b>
+  <%=link_to(@appointment.doctor.name, :controller => 'doctors', :action => 'show', :id => @appointment.doctor.id) %>
+</p>
+
+<p>
+  <b>Patient:</b>
+<%= link_to(@appointment.patient.name, :controller => 'patients', :action => 'show', :id => @appointment.patient.id)%>
+
+</p>
+
+<% if params[:doctor_id]%>
+<%= link_to 'Edit', edit_doctor_appointment_path(@person, @appointment) %> |
+<%= link_to 'Back', doctor_appointments_path(@person) %>
+<% else %>
+<%= link_to 'Edit', edit_patient_appointment_path(@person, @appointment) %> |
+<%= link_to 'Back', patient_appointments_path(@person) %>
+<% end %>

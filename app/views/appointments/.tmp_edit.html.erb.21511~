@@ -1,0 +1,44 @@
+<h1>Editing appointment</h1>
+
+<% form_for(@appointment) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :time_slot %><br />
+    <%= f.datetime_select :time_slot %>
+  </p>
+  <p>
+    <%= f.label :priority %><br />
+    <%= f.text_field :priority %>
+  </p>
+  <p>
+    <%= f.label :arrive_date_time %><br />
+    <%= f.datetime_select :arrive_date_time %>
+  </p>
+  <p>
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </p>
+  <p>
+    <%= f.label :symptoms %><br />
+    <%= f.text_area :symptoms %>
+  </p>
+  <p>
+    <%= f.label :doctor %><br />
+    <%= f.text_field :doctor %>
+  </p>
+  <p>
+    <%= f.label :patient_id %><br />
+    <%= f.text_field :patient_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @appointment %> |
+<%= link_to 'Back', appointments_path %>

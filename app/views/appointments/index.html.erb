@@ -1,0 +1,45 @@
+<h1>Appointments For <%=h @person.name%></h1>
+
+<% if @person.appointments.count > 0 %>
+<table>
+  <tr>
+    <th>Date Of Appoitnment</th>
+	<th>Start</th>
+	<th>End</th>
+    <th>Priority</th>
+    <th>Arrive date time</th>
+    <th>Note</th>
+    <th>Status</th>
+    <th>Symptoms</th>
+    <th>Doctor</th>
+    <th>Patient</th>
+  </tr>
+
+<% @appointments.each do |appointment| %>
+  <tr>
+    <td><%=h appointment.date_of_appointment %></td>
+	<td><%=h appointment.start_time %></td>
+	<td><%=h appointment.end_time %></td>
+    <td><%=h appointment.priority %></td>
+    <td><%=h appointment.arrive_date_time %></td>
+    <td><%=h appointment.note %></td>
+    <td><%=h appointment.status %></td>
+    <td><%=h appointment.symptoms %></td>
+    <td><%=h appointment.patient.name %></td>
+    <td><%= link_to 'Show', [@person, appointment] %></td>
+	<% if params[:doctor_id]%>
+	<td><%= link_to 'Edit', edit_doctor_appointment_path(@person, appointment) %></td>
+	<% else %>
+    <td><%= link_to 'Edit', edit_patient_appointment_path(@person, appointment) %></td>
+	<% end %>
+    <td><%= link_to 'Destroy', [@person, appointment], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% else %>
+<p><%=h @person.name %> does not have any appointments.</p>
+<% end %>
+<%= link_to 'New appointment', new_patient_appointment_path(@person) %> |
+<%= link_to 'Back', @person %>

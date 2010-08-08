@@ -1,0 +1,59 @@
+<p>
+  <b>Symptoms:</b>
+  <%=h @visit.symptoms %>
+</p>
+
+<p>
+  <b>Provisional diagnostics:</b>
+  <%=h @visit.provisional_diagnostics %>
+</p>
+
+<p>
+  <b>Lab test:</b>
+  <%=h @visit.lab_test %>
+</p>
+
+<p>
+  <b>Final diagnostics:</b>
+  <%=h @visit.final_diagnostics %>
+</p>
+
+<p>
+  <b>Method of treatment:</b>
+  <%=h @visit.method_of_treatment %>
+</p>
+
+<p>
+  <b>Medication perscribed:</b>
+  <%=h @visit.medication_perscribed %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%=h @visit.comments %>
+</p>
+
+<p>
+  <b>Visit time:</b>
+  <%=h @visit.visit_time %>
+</p>
+
+<p>
+  <b>Follow up:</b>
+  <%=h @visit.follow_up %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%=h @visit.end_time %>
+</p>
+
+<p>
+  <b>Patient:</b>
+  <%=h @visit.patient.name %>
+</p>
+<input class="print_button" type="button" onclick="window.print()" value="Print Record">
+
+
+<%= link_to 'Edit', edit_patient_visit_path(@patient, @visit) %> |
+<%= link_to 'Back', patient_visits_path(@patient) %>

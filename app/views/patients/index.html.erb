@@ -1,0 +1,46 @@
+<h1>Listing patients</h1>
+<div id="search">
+<% form_tag patients_path, :method => "get" do %>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "Search", :name => nil %>
+<% end %>
+</div>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Middle Name</th>
+    <th>Last Name</th>
+    <th>Date of birth</th>
+    <th>Address</th>
+    <th>Sex</th>
+    <th>Universal id</th>
+    <th>Allergies</th>
+    <th>Tel number</th>
+  </tr>
+
+<% @patients.each do |patient| %>
+  <tr>
+    <td><%=h patient.f_name %></td>
+    <td><%=h patient.m_name %></td>
+    <td><%=h patient.l_name %></td>
+    <td><%=h patient.date_of_birth %></td>
+    <td><%=h patient.address %></td>
+    <td><%=h patient.sex %></td>
+    <td><%=h patient.universal_ID %></td>
+    <td><%=h patient.allergies %></td>
+    <td><%=h patient.tel_number %></td>
+    <td><%= link_to 'Show', patient %></td>
+	<% if can? :update, @patient %>
+    <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+	<% end %>
+	<td><%= link_to 'Appointments', patient_appointments_path(patient) %></td>
+	<td><%= link_to 'Previous Visits', patient_visits_path(patient) %></td>
+    <td><%= link_to 'Destroy', patient, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New patient', new_patient_path %>

@@ -1,0 +1,44 @@
+<% form_for([@patient, @appointment]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :date_of_appointment %><br />
+    <%= f.date_select :date_of_appointment %>
+  </p>
+   <p>
+    <%= f.label :start_time %><br />
+    <%= f.time_select :start_time %>
+  </p>
+   <p>
+    <%= f.label :end_time %><br />
+    <%= f.time_select :end_time %>
+  </p>
+  <p>
+    <%= f.label :priority %><br />
+    <%= f.text_field :priority %>
+  </p>
+  <p>
+    <%= f.label :arrive_date_time %><br />
+    <%= f.datetime_select :arrive_date_time %>
+  </p>
+  <p>
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </p>
+  <p>
+    <%= f.label :symptoms %><br />
+    <%= f.text_area :symptoms %>
+  </p>
+  <p>
+	<%= f.label :doctor_id %>
+	<%= f.select :doctor_id, Doctor.find(:all, :order => "name").collect { |s|
+		[s.name, s.id]} %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>

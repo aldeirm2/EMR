@@ -1,0 +1,47 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  f_name: MyString
+  m_name: MyString
+  l_name: MyString
+  date_of_birth: 2010-07-28
+  medical_history: MyText
+  address: MyText
+  sex: MyString
+  date_of_first_admission: 2010-07-28
+  universal_ID: MyString
+  next_of_kin: MyText
+  allergies: MyString
+  family_history: MyText
+  blood_type: MyString
+  weight: 1.5
+  height: 1.5
+  bmi: MyString
+  occupation: MyString
+  current_medication: MyText
+  tel_number: 1
+  mobile_number: 1
+  email: MyString
+
+two:
+  f_name: MyString
+  m_name: MyString
+  l_name: MyString
+  date_of_birth: 2010-07-28
+  medical_history: MyText
+  address: MyText
+  sex: MyString
+  date_of_first_admission: 2010-07-28
+  universal_ID: MyString
+  next_of_kin: MyText
+  allergies: MyString
+  family_history: MyText
+  blood_type: MyString
+  weight: 1.5
+  height: 1.5
+  bmi: MyString
+  occupation: MyString
+  current_medication: MyText
+  tel_number: 1
+  mobile_number: 1
+  email: MyString

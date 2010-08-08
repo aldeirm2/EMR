@@ -1,0 +1,96 @@
+<% form_for@patient, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <b>Patient Photo</b><br />
+    <%= f.file_field :photo %>
+  </p
+  <p>
+    <%= f.label :f_name %><br />
+    <%= f.text_field :f_name %>
+  </p>
+  <p>
+    <%= f.label :m_name %><br />
+    <%= f.text_field :m_name %>
+  </p>
+  <p>
+    <%= f.label :l_name %><br />
+    <%= f.text_field :l_name %>
+  </p>
+  <p>
+    <%= f.label :date_of_birth %><br />
+	<%= f.date_select :date_of_birth, :start_year => 1900, :end_year => Time.now.year %>
+  </p>
+  <p>
+    <%= f.label :medical_history %><br />
+    <%= f.text_area :medical_history %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_area :address %>
+  </p>
+  <p>
+    <%= f.label :sex %><br />
+    <%= f.radio_button :sex, 'Male' %> Male<br />
+	<%= f.radio_button :sex, 'Female' %> Female<br />
+  </p>
+  <p>
+    <%= f.label :date_of_first_admission %><br />
+    <%= f.date_select :date_of_first_admission %>
+  </p>
+  <p>
+    <%= f.label :universal_ID %><br />
+    <%= f.text_field :universal_ID %>
+  </p>
+  <p>
+    <%= f.label :next_of_kin %><br />
+    <%= f.text_area :next_of_kin %>
+  </p>
+  <p>
+    <%= f.label :allergies %><br />
+    <%= f.text_field :allergies %>
+  </p>
+  <p>
+    <%= f.label :family_history %><br />
+    <%= f.text_area :family_history %>
+  </p>
+  <p>
+    <%= f.label :blood_type %><br />
+    <%= f.select (:blood_type, ['A+', 'A-','B+','B-','AB+','AB-','O+','O-']) %>
+  </p>
+  <p>
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </p>
+  <p>
+    <%= f.label :height %><br />
+    <%= f.text_field :height %>
+  </p>
+  <p>
+    <%= f.label :bmi %><br />
+    <%= f.text_field :bmi %>
+  </p>
+  <p>
+    <%= f.label :occupation %><br />
+    <%= f.text_field :occupation %>
+  </p>
+  <p>
+    <%= f.label :current_medication %><br />
+    <%= f.text_area :current_medication %>
+  </p>
+  <p>
+    <%= f.label :tel_number %><br />
+    <%= f.text_field :tel_number %>
+  </p>
+  <p>
+    <%= f.label :mobile_number %><br />
+    <%= f.text_field :mobile_number %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>

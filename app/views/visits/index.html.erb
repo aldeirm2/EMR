@@ -1,0 +1,45 @@
+<h1>visits for <%=h @patient.name %></h1>
+
+<% if @patient.visits.count > 0 %>
+	<table>
+	  <tr>
+	    <th>Symptoms</th>
+	    <th>Provisional diagnostics</th>
+	    <th>Lab test</th>
+	    <th>Final diagnostics</th>
+	    <th>Method of treatment</th>
+	    <th>Medication perscribed</th>
+	    <th>Comments</th>
+	    <th>Visit time</th>
+	    <th>Follow up</th>
+	    <th>End time</th>
+	    <th>Patient</th>
+	  </tr>
+	
+	<% @visits.each do |visit| %>
+	  <tr>
+	    <td><%=h visit.symptoms %></td>
+	    <td><%=h visit.provisional_diagnostics %></td>
+	    <td><%=h visit.lab_test %></td>
+	    <td><%=h visit.final_diagnostics %></td>
+	    <td><%=h visit.method_of_treatment %></td>
+	    <td><%=h visit.medication_perscribed %></td>
+	    <td><%=h visit.comments %></td>
+	    <td><%=h visit.visit_time %></td>
+	    <td><%=h visit.follow_up %></td>
+	    <td><%=h visit.end_time %></td>
+	    <td><%=h visit.patient_id %></td>
+	    <td><%= link_to 'Show', [@patient, visit] %></td>
+	    <td><%= link_to 'Edit', edit_patient_visit_path(@patient, visit) %></td>
+	    <td><%= link_to 'Destroy', [@patient, visit], :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+	
+	<br />
+<% else %>
+	<p><%=h @patient.name %> dosent have any previous visits</p>
+<% end %>
+
+<%= link_to 'New visit', new_patient_visit_path(@patient) %>
+<%= link_to 'Back', @patient %>

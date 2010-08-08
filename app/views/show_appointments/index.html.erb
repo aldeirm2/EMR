@@ -1,0 +1,29 @@
+<h1>All Appointments</h1>
+
+<table>
+  <tr>
+    <th>Time slot</th>
+    <th>Priority</th>
+    <th>Arrive date time</th>
+    <th>Note</th>
+    <th>Status</th>
+    <th>Symptoms</th>
+    <th>Doctor</th>
+    <th>Patient</th>
+  </tr>
+
+<% @appointments.each do |appointment| %>
+  <tr>
+    <td><%=h appointment.time_slot %></td>
+    <td><%=h appointment.priority %></td>
+    <td><%=h appointment.arrive_date_time %></td>
+    <td><%=h appointment.note %></td>
+    <td><%=h appointment.status %></td>
+    <td><%=h appointment.symptoms %></td>
+    <td><%=h appointment.doctor %></td>
+	<td><a href="/patients/<%= appointment.patient_id%>"><%=h appointment.patient.name %></a></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

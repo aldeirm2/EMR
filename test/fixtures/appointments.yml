@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  time_slot: 2010-07-29 23:55:14
+  priority: MyString
+  arrive_date_time: 2010-07-29 23:55:14
+  note: MyText
+  status: MyString
+  symptoms: MyText
+  doctor: MyString
+
+two:
+  time_slot: 2010-07-29 23:55:14
+  priority: MyString
+  arrive_date_time: 2010-07-29 23:55:14
+  note: MyText
+  status: MyString
+  symptoms: MyText
+  doctor: MyString
