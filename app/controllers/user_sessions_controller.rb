@@ -1,7 +1,7 @@
 class UserSessionsController < ApplicationController
   
-  layout "general"
-  def new
+   layout "application"
+  def index
     @user_session = UserSession.new
   end
   

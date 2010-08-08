@@ -54,18 +54,38 @@ a:hover { color: #fff; background-color:#000; }
 
 #navigation_header {
   border-bottom: medium solid black;
+  background-image: url('/images/clients-header.jpg');
+  height: 70px;
 }
 
 #user_options {
 	text-align: right;
+	font-size: large;
 }
 
 #patient_link {
 	text-align:left;
+	font-size: large;
 }
 
 td {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#login_box {
+	margin-left: auto;
+	border: medium solid black;
+	width: 330px;
+	margin-right: auto;
+}
+#login_felids {
+	padding-left: 30px;
+}
+#login_page {
+	width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+	
 }
 

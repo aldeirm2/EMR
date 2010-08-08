@@ -1,0 +1,23 @@
+<div login_page>
+<h1>ABCD local GP</h1>
+	<% if current_user %>
+		<p>Hi <%=h current_user.username %>.</p>
+	<% else %>
+		<div id="login_box">
+			<div id="login_felids">
+			<% form_for @user_session do |f| %>
+			  <%= f.error_messages %>
+			  <p>
+			    <%= f.label :username %><br />
+			    <%= f.text_field :username %>
+			  </p>
+			  <p>
+			    <%= f.label :password %><br />
+			    <%= f.password_field :password %>
+			  </p>
+			  <p><%= f.submit "Login" %></p>
+			<% end %>
+			</div>
+		</div>
+	<% end %>
+</div>

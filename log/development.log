@@ -14948,3 +14948,637 @@ Rendering appointments/show
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
 Rendered _navigation_header (0.5ms)
 Completed in 46ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments/20]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 17:32:22) [GET]
+Rendering template within layouts/general
+Rendering welcome/index
+Completed in 44ms (View: 41, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing PatientsController#show (for 127.0.0.1 at 2010-08-08 22:06:11) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPatient Load (0.3ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendering template within layouts/patients
+Rendering patients/show
+Rendered _navigation_header (1.0ms)
+Completed in 55ms (View: 23, DB: 1) | 200 OK [http://0.0.0.0/patients/3]
+
+
+Processing AppointmentsController#index (for 127.0.0.1 at 2010-08-08 22:06:16) [GET]
+  Parameters: {"patient_id"=>"3"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPatient Load (0.4ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendering template within layouts/appointments
+Rendering appointments/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+  [4;35;1mAppointment Load (0.5ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendered _navigation_header (0.5ms)
+Completed in 124ms (View: 45, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments]
+
+
+Processing AppointmentsController#destroy (for 127.0.0.1 at 2010-08-08 22:06:20) [DELETE]
+  Parameters: {"authenticity_token"=>"rUBDNCa9Yh6fHCcluBZG9Vqx6K4IyHpwALM1lnErcHg=", "patient_id"=>"3", "id"=>"20"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mAppointment Load (0.2ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 20) [0m
+  [4;35;1mPatient Load (0.4ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;36;1mAppointment Load (0.2ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 20 AND ("appointments".patient_id = 3)) [0m
+  [4;35;1mAppointment Destroy (0.3ms)[0m   [0mDELETE FROM "appointments" WHERE "id" = 20[0m
+Redirected to http://0.0.0.0:3000/patients/3/appointments
+Completed in 163ms (DB: 1) | 302 Found [http://0.0.0.0/patients/3/appointments/20]
+
+
+Processing AppointmentsController#index (for 127.0.0.1 at 2010-08-08 22:06:21) [GET]
+  Parameters: {"patient_id"=>"3"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPatient Load (0.4ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendering template within layouts/appointments
+Rendering appointments/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+  [4;35;1mAppointment Load (0.4ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendered _navigation_header (0.5ms)
+Completed in 72ms (View: 33, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments]
+
+
+Processing AppointmentsController#destroy (for 127.0.0.1 at 2010-08-08 22:06:22) [DELETE]
+  Parameters: {"authenticity_token"=>"rUBDNCa9Yh6fHCcluBZG9Vqx6K4IyHpwALM1lnErcHg=", "patient_id"=>"3", "id"=>"19"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mAppointment Load (0.3ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments"."id" = 19) [0m
+  [4;36;1mPatient Load (0.4ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;35;1mAppointment Load (0.2ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments"."id" = 19 AND ("appointments".patient_id = 3)) [0m
+  [4;36;1mAppointment Destroy (0.1ms)[0m   [0;1mDELETE FROM "appointments" WHERE "id" = 19[0m
+Redirected to http://0.0.0.0:3000/patients/3/appointments
+Completed in 104ms (DB: 1) | 302 Found [http://0.0.0.0/patients/3/appointments/19]
+
+
+Processing AppointmentsController#index (for 127.0.0.1 at 2010-08-08 22:06:22) [GET]
+  Parameters: {"patient_id"=>"3"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPatient Load (0.3ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendering template within layouts/appointments
+Rendering appointments/index
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+  [4;36;1mAppointment Load (0.3ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendered _navigation_header (0.5ms)
+Completed in 55ms (View: 24, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments]
+
+
+Processing AppointmentsController#destroy (for 127.0.0.1 at 2010-08-08 22:06:24) [DELETE]
+  Parameters: {"authenticity_token"=>"rUBDNCa9Yh6fHCcluBZG9Vqx6K4IyHpwALM1lnErcHg=", "patient_id"=>"3", "id"=>"18"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mAppointment Load (0.2ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments"."id" = 18) [0m
+  [4;36;1mPatient Load (0.4ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;35;1mAppointment Load (0.2ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments"."id" = 18 AND ("appointments".patient_id = 3)) [0m
+  [4;36;1mAppointment Destroy (0.2ms)[0m   [0;1mDELETE FROM "appointments" WHERE "id" = 18[0m
+Redirected to http://0.0.0.0:3000/patients/3/appointments
+Completed in 146ms (DB: 1) | 302 Found [http://0.0.0.0/patients/3/appointments/18]
+
+
+Processing AppointmentsController#index (for 127.0.0.1 at 2010-08-08 22:06:24) [GET]
+  Parameters: {"patient_id"=>"3"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPatient Load (0.3ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendering template within layouts/appointments
+Rendering appointments/index
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+  [4;36;1mAppointment Load (0.3ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendered _navigation_header (0.5ms)
+Completed in 52ms (View: 20, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments]
+
+
+Processing AppointmentsController#destroy (for 127.0.0.1 at 2010-08-08 22:06:29) [DELETE]
+  Parameters: {"authenticity_token"=>"rUBDNCa9Yh6fHCcluBZG9Vqx6K4IyHpwALM1lnErcHg=", "patient_id"=>"3", "id"=>"17"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mAppointment Load (0.3ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 17) [0m
+  [4;35;1mPatient Load (0.4ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;36;1mAppointment Load (0.2ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 17 AND ("appointments".patient_id = 3)) [0m
+  [4;35;1mAppointment Destroy (0.1ms)[0m   [0mDELETE FROM "appointments" WHERE "id" = 17[0m
+Redirected to http://0.0.0.0:3000/patients/3/appointments
+Completed in 125ms (DB: 1) | 302 Found [http://0.0.0.0/patients/3/appointments/17]
+
+
+Processing AppointmentsController#index (for 127.0.0.1 at 2010-08-08 22:06:29) [GET]
+  Parameters: {"patient_id"=>"3"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPatient Load (0.4ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendering template within layouts/appointments
+Rendering appointments/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+  [4;35;1mAppointment Load (0.2ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendered _navigation_header (0.5ms)
+Completed in 50ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments]
+
+
+Processing AppointmentsController#destroy (for 127.0.0.1 at 2010-08-08 22:06:31) [DELETE]
+  Parameters: {"authenticity_token"=>"rUBDNCa9Yh6fHCcluBZG9Vqx6K4IyHpwALM1lnErcHg=", "patient_id"=>"3", "id"=>"12"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mAppointment Load (0.2ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 12) [0m
+  [4;35;1mPatient Load (0.5ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;36;1mAppointment Load (0.3ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 12 AND ("appointments".patient_id = 3)) [0m
+  [4;35;1mAppointment Destroy (0.2ms)[0m   [0mDELETE FROM "appointments" WHERE "id" = 12[0m
+Redirected to http://0.0.0.0:3000/patients/3/appointments
+Completed in 111ms (DB: 2) | 302 Found [http://0.0.0.0/patients/3/appointments/12]
+
+
+Processing AppointmentsController#index (for 127.0.0.1 at 2010-08-08 22:06:31) [GET]
+  Parameters: {"patient_id"=>"3"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPatient Load (0.4ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendering template within layouts/appointments
+Rendering appointments/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+Rendered _navigation_header (0.5ms)
+Completed in 85ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments]
+
+
+Processing AppointmentsController#new (for 127.0.0.1 at 2010-08-08 22:06:32) [GET]
+  Parameters: {"patient_id"=>"3"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPatient Load (0.3ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendering template within layouts/appointments
+Rendering appointments/new
+  [4;35;1mDoctor Load (0.3ms)[0m   [0mSELECT * FROM "doctors" ORDER BY name[0m
+Rendered appointments/_appointment_form (35.4ms)
+Rendered _navigation_header (0.5ms)
+Completed in 81ms (View: 48, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments/new]
+
+
+Processing AppointmentsController#create (for 127.0.0.1 at 2010-08-08 22:06:47) [POST]
+  Parameters: {"appointment"=>{"arrive_date_time(2i)"=>"8", "arrive_date_time(3i)"=>"8", "start_time(1i)"=>"2010", "arrive_date_time(4i)"=>"21", "start_time(2i)"=>"8", "symptoms"=>"dsf", "arrive_date_time(5i)"=>"06", "start_time(3i)"=>"8", "priority"=>"dsf", "end_time(1i)"=>"2010", "start_time(4i)"=>"09", "end_time(2i)"=>"8", "start_time(5i)"=>"06", "end_time(3i)"=>"8", "doctor_id"=>"1", "note"=>"sdf", "end_time(4i)"=>"21", "end_time(5i)"=>"10", "date_of_appointment(1i)"=>"2010", "status"=>"sdf", "arrive_date_time(1i)"=>"2010", "date_of_appointment(2i)"=>"8", "date_of_appointment(3i)"=>"8"}, "commit"=>"Create", "authenticity_token"=>"rUBDNCa9Yh6fHCcluBZG9Vqx6K4IyHpwALM1lnErcHg=", "patient_id"=>"3"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPatient Load (0.4ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;36;1mPatient Load (0.1ms)[0m   [0;1mSELECT "patients".id FROM "patients" WHERE ("patients"."id" = 3) LIMIT 1[0m
+  [4;35;1mAppointment Load (0.1ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments"."doctor_id" = 1 AND "appointments"."date_of_appointment" = '2010-08-08') [0m
+  [4;36;1mAppointment Create (0.2ms)[0m   [0;1mINSERT INTO "appointments" ("created_at", "end_time", "arrive_date_time", "symptoms", "updated_at", "priority", "patient_id", "note", "doctor_id", "status", "start_time", "date_of_appointment") VALUES('2010-08-08 21:06:47', '2010-08-08 21:10:00', '2010-08-08 21:06:00', 'dsf', '2010-08-08 21:06:47', 'dsf', 3, 'sdf', 1, 'sdf', '2010-08-08 09:06:00', '2010-08-08')[0m
+Redirected to http://0.0.0.0:3000/patients/3/appointments/21
+Completed in 189ms (DB: 1) | 302 Found [http://0.0.0.0/patients/3/appointments]
+
+
+Processing AppointmentsController#show (for 127.0.0.1 at 2010-08-08 22:06:47) [GET]
+  Parameters: {"patient_id"=>"3", "id"=>"21"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mAppointment Load (0.2ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 21) [0m
+  [4;35;1mPatient Load (0.4ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;36;1mAppointment Load (0.2ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 21 AND ("appointments".patient_id = 3)) [0m
+Rendering template within layouts/appointments
+Rendering appointments/show
+  [4;35;1mDoctor Load (0.2ms)[0m   [0mSELECT * FROM "doctors" WHERE ("doctors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendered _navigation_header (0.5ms)
+Completed in 54ms (View: 20, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments/21]
+
+
+Processing PatientsController#show (for 127.0.0.1 at 2010-08-08 22:06:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPatient Load (0.3ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendering template within layouts/patients
+Rendering patients/show
+Rendered _navigation_header (0.5ms)
+Completed in 34ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/patients/3]
+
+
+Processing AppointmentsController#index (for 127.0.0.1 at 2010-08-08 22:06:52) [GET]
+  Parameters: {"patient_id"=>"3"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPatient Load (0.4ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendering template within layouts/appointments
+Rendering appointments/index
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+  [4;36;1mAppointment Load (0.2ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments".patient_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendered _navigation_header (0.5ms)
+Completed in 48ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments]
+
+
+Processing AppointmentsController#new (for 127.0.0.1 at 2010-08-08 22:06:54) [GET]
+  Parameters: {"patient_id"=>"3"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPatient Load (0.3ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendering template within layouts/appointments
+Rendering appointments/new
+  [4;36;1mDoctor Load (0.2ms)[0m   [0;1mSELECT * FROM "doctors" ORDER BY name[0m
+Rendered appointments/_appointment_form (33.1ms)
+Rendered _navigation_header (0.5ms)
+Completed in 71ms (View: 39, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments/new]
+
+
+Processing AppointmentsController#create (for 127.0.0.1 at 2010-08-08 22:07:37) [POST]
+  Parameters: {"appointment"=>{"arrive_date_time(2i)"=>"8", "arrive_date_time(3i)"=>"8", "start_time(1i)"=>"2010", "arrive_date_time(4i)"=>"21", "start_time(2i)"=>"8", "symptoms"=>"", "arrive_date_time(5i)"=>"06", "start_time(3i)"=>"8", "priority"=>"", "end_time(1i)"=>"2010", "start_time(4i)"=>"11", "end_time(2i)"=>"8", "start_time(5i)"=>"06", "end_time(3i)"=>"8", "doctor_id"=>"1", "note"=>"", "end_time(4i)"=>"21", "end_time(5i)"=>"06", "date_of_appointment(1i)"=>"2010", "status"=>"", "arrive_date_time(1i)"=>"2010", "date_of_appointment(2i)"=>"8", "date_of_appointment(3i)"=>"8"}, "commit"=>"Create", "authenticity_token"=>"rUBDNCa9Yh6fHCcluBZG9Vqx6K4IyHpwALM1lnErcHg=", "patient_id"=>"3"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPatient Load (0.3ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;35;1mPatient Load (0.1ms)[0m   [0mSELECT "patients".id FROM "patients" WHERE ("patients"."id" = 3) LIMIT 1[0m
+  [4;36;1mAppointment Load (0.2ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."doctor_id" = 1 AND "appointments"."date_of_appointment" = '2010-08-08') [0m
+  [4;35;1mAppointment Create (0.2ms)[0m   [0mINSERT INTO "appointments" ("created_at", "end_time", "arrive_date_time", "symptoms", "updated_at", "priority", "patient_id", "note", "doctor_id", "status", "start_time", "date_of_appointment") VALUES('2010-08-08 21:07:37', '2010-08-08 21:06:00', '2010-08-08 21:06:00', '', '2010-08-08 21:07:37', '', 3, '', 1, '', '2010-08-08 11:06:00', '2010-08-08')[0m
+Redirected to http://0.0.0.0:3000/patients/3/appointments/22
+Completed in 135ms (DB: 1) | 302 Found [http://0.0.0.0/patients/3/appointments]
+
+
+Processing AppointmentsController#show (for 127.0.0.1 at 2010-08-08 22:07:37) [GET]
+  Parameters: {"patient_id"=>"3", "id"=>"22"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mAppointment Load (0.2ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments"."id" = 22) [0m
+  [4;36;1mPatient Load (0.3ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;35;1mAppointment Load (0.2ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments"."id" = 22 AND ("appointments".patient_id = 3)) [0m
+Rendering template within layouts/appointments
+Rendering appointments/show
+  [4;36;1mDoctor Load (0.1ms)[0m   [0;1mSELECT * FROM "doctors" WHERE ("doctors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendered _navigation_header (0.5ms)
+Completed in 50ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments/22]
+
+
+Processing AppointmentsController#edit (for 127.0.0.1 at 2010-08-08 22:07:39) [GET]
+  Parameters: {"patient_id"=>"3", "id"=>"22"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mAppointment Load (0.2ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments"."id" = 22) [0m
+  [4;36;1mPatient Load (0.4ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;35;1mAppointment Load (0.2ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments"."id" = 22 AND ("appointments".patient_id = 3)) [0m
+Rendering template within layouts/appointments
+Rendering appointments/edit
+  [4;36;1mDoctor Load (0.2ms)[0m   [0;1mSELECT * FROM "doctors" ORDER BY name[0m
+Rendered appointments/_appointment_form (37.3ms)
+Rendered _navigation_header (0.5ms)
+Completed in 126ms (View: 48, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments/22/edit]
+
+
+Processing AppointmentsController#update (for 127.0.0.1 at 2010-08-08 22:07:42) [PUT]
+  Parameters: {"appointment"=>{"arrive_date_time(2i)"=>"8", "arrive_date_time(3i)"=>"8", "start_time(1i)"=>"2000", "arrive_date_time(4i)"=>"21", "start_time(2i)"=>"1", "symptoms"=>"", "arrive_date_time(5i)"=>"06", "start_time(3i)"=>"1", "priority"=>"", "end_time(1i)"=>"2000", "start_time(4i)"=>"11", "end_time(2i)"=>"1", "start_time(5i)"=>"06", "end_time(3i)"=>"1", "doctor_id"=>"1", "note"=>"", "end_time(4i)"=>"21", "end_time(5i)"=>"06", "date_of_appointment(1i)"=>"2010", "status"=>"", "arrive_date_time(1i)"=>"2010", "date_of_appointment(2i)"=>"8", "date_of_appointment(3i)"=>"8"}, "commit"=>"Create", "authenticity_token"=>"rUBDNCa9Yh6fHCcluBZG9Vqx6K4IyHpwALM1lnErcHg=", "patient_id"=>"3", "id"=>"22"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mAppointment Load (0.2ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 22) [0m
+  [4;35;1mPatient Load (0.3ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;36;1mAppointment Load (0.2ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 22 AND ("appointments".patient_id = 3)) [0m
+  [4;35;1mPatient Load (0.1ms)[0m   [0mSELECT "patients".id FROM "patients" WHERE ("patients"."id" = 3) LIMIT 1[0m
+  [4;36;1mAppointment Load (0.3ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."doctor_id" = 1 AND "appointments"."date_of_appointment" = '2010-08-08') [0m
+Rendering template within layouts/appointments
+Rendering appointments/edit
+  [4;35;1mDoctor Load (0.3ms)[0m   [0mSELECT * FROM "doctors" ORDER BY name[0m
+Rendered appointments/_appointment_form (34.0ms)
+Rendered _navigation_header (0.5ms)
+Completed in 79ms (View: 40, DB: 2) | 200 OK [http://0.0.0.0/patients/3/appointments/22]
+
+
+Processing AppointmentsController#update (for 127.0.0.1 at 2010-08-08 22:07:51) [PUT]
+  Parameters: {"appointment"=>{"arrive_date_time(2i)"=>"8", "arrive_date_time(3i)"=>"8", "start_time(1i)"=>"2000", "arrive_date_time(4i)"=>"21", "start_time(2i)"=>"1", "symptoms"=>"", "arrive_date_time(5i)"=>"06", "start_time(3i)"=>"1", "priority"=>"", "end_time(1i)"=>"2000", "start_time(4i)"=>"22", "end_time(2i)"=>"1", "start_time(5i)"=>"06", "end_time(3i)"=>"1", "doctor_id"=>"1", "note"=>"", "end_time(4i)"=>"23", "end_time(5i)"=>"06", "date_of_appointment(1i)"=>"2010", "status"=>"", "arrive_date_time(1i)"=>"2010", "date_of_appointment(2i)"=>"8", "date_of_appointment(3i)"=>"8"}, "commit"=>"Create", "authenticity_token"=>"rUBDNCa9Yh6fHCcluBZG9Vqx6K4IyHpwALM1lnErcHg=", "patient_id"=>"3", "id"=>"22"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mAppointment Load (0.2ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments"."id" = 22) [0m
+  [4;36;1mPatient Load (0.3ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;35;1mAppointment Load (0.2ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments"."id" = 22 AND ("appointments".patient_id = 3)) [0m
+  [4;36;1mPatient Load (0.1ms)[0m   [0;1mSELECT "patients".id FROM "patients" WHERE ("patients"."id" = 3) LIMIT 1[0m
+  [4;35;1mAppointment Load (0.3ms)[0m   [0mSELECT * FROM "appointments" WHERE ("appointments"."doctor_id" = 1 AND "appointments"."date_of_appointment" = '2010-08-08') [0m
+  [4;36;1mAppointment Update (0.1ms)[0m   [0;1mUPDATE "appointments" SET "start_time" = '2000-01-01 22:06:00', "updated_at" = '2010-08-08 21:07:51', "end_time" = '2000-01-01 23:06:00' WHERE "id" = 22[0m
+Redirected to http://0.0.0.0:3000/patients/3/appointments/22
+Completed in 102ms (DB: 1) | 302 Found [http://0.0.0.0/patients/3/appointments/22]
+
+
+Processing AppointmentsController#show (for 127.0.0.1 at 2010-08-08 22:07:51) [GET]
+  Parameters: {"patient_id"=>"3", "id"=>"22"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mAppointment Load (0.2ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 22) [0m
+  [4;35;1mPatient Load (0.4ms)[0m   [0mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+  [4;36;1mAppointment Load (0.2ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 22 AND ("appointments".patient_id = 3)) [0m
+Rendering template within layouts/appointments
+Rendering appointments/show
+  [4;35;1mDoctor Load (0.2ms)[0m   [0mSELECT * FROM "doctors" WHERE ("doctors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "patients" WHERE ("patients"."id" = 3) [0m
+Rendered _navigation_header (0.5ms)
+Completed in 50ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/patients/3/appointments/22]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:17:06) [GET]
+Rendering template within layouts/general
+Rendering welcome/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 74ms (View: 71, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:20:09) [GET]
+Rendering template within layouts/general
+Rendering welcome/index
+Completed in 18ms (View: 15, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:20:13) [GET]
+Rendering template within layouts/general
+Rendering welcome/index
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:20:41) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered _navigation_header (0.5ms)
+Completed in 19ms (View: 16, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:34:40) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered _navigation_header (1.1ms)
+Completed in 89ms (View: 81, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:35:40) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered _navigation_header (0.5ms)
+Completed in 22ms (View: 20, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:35:49) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered _navigation_header (0.7ms)
+Completed in 19ms (View: 16, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:37:28) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered _navigation_header (0.5ms)
+Completed in 18ms (View: 16, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:37:40) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered _navigation_header (0.5ms)
+Completed in 16ms (View: 13, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:37:51) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered _navigation_header (0.5ms)
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing PatientsController#index (for 127.0.0.1 at 2010-08-08 22:37:55) [GET]
+Redirected to http://0.0.0.0:3000/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 11ms (DB: 0) | 302 Found [http://0.0.0.0/patients]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:37:56) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered _navigation_header (0.5ms)
+Completed in 58ms (View: 55, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:38:45) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered _navigation_header (0.5ms)
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-08-08 22:42:53) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/user_sessions/new.html.erb:
+1: <h1>Login</h1>
+2: 
+3: <% form_for @user_session do |f| %>
+4:   <%= f.error_messages %>
+5:   <p>
+6:     <%= f.label :username %><br />
+
+    searchlogic (2.4.21) lib/searchlogic/rails_helpers.rb:64:in `form_for'
+    app/views/user_sessions/new.html.erb:3
+    app/views/welcome/index.html.erb:5
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (94.6ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-08 22:48:30) [GET]
+
+NameError (uninitialized constant UserSessionController):
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (26.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 22:48:49) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 22ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 22:56:26) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 22ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 22:56:55) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 19ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 22:57:10) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 21ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 22:57:18) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 18ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 22:58:38) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 18ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 22:58:39) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 19ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 22:59:06) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 22ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 22:59:06) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 18ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 22:59:22) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendered _navigation_header (0.6ms)
+Completed in 33ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-08-08 22:59:26) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed in 22ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 22:59:26) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (1.3ms)
+Completed in 24ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 22:59:52) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 25ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 23:00:04) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.6ms)
+Completed in 70ms (View: 56, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 23:00:58) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 22ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 23:02:49) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.6ms)
+Completed in 28ms (View: 13, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 23:03:25) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 18ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 23:04:20) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 69ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 23:04:21) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 18ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 23:04:30) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.6ms)
+Completed in 22ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 23:05:01) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 19ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 23:05:34) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 69ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 23:05:35) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 20ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 23:06:10) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 22ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#index (for 127.0.0.1 at 2010-08-08 23:06:15) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/index
+Rendered _navigation_header (0.5ms)
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-08-08 23:06:27) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"username"=>"admin", "password"=>"1234"}, "authenticity_token"=>"rUBDNCa9Yh6fHCcluBZG9Vqx6K4IyHpwALM1lnErcHg="}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'admin') LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/patients
+Completed in 202ms (DB: 0) | 302 Found [http://0.0.0.0/user_sessions]
+
+
+Processing PatientsController#index (for 127.0.0.1 at 2010-08-08 23:06:27) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPatient Load (4.2ms)[0m   [0;1mSELECT * FROM "patients" [0m
+Rendering template within layouts/patients
+Rendering patients/index
+Rendered _navigation_header (0.5ms)
+Completed in 114ms (View: 27, DB: 4) | 200 OK [http://0.0.0.0/patients]
+
+
+Processing PatientsController#index (for 127.0.0.1 at 2010-08-08 23:06:35) [GET]
+  Parameters: {"search"=>"dix"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPatient Load (0.4ms)[0m   [0;1mSELECT * FROM "patients" WHERE (l_name LIKE '%dix%') [0m
+Rendering template within layouts/patients
+Rendering patients/index
+Rendered _navigation_header (0.6ms)
+Completed in 46ms (View: 12, DB: 1) | 200 OK [http://0.0.0.0/patients?search=dix]

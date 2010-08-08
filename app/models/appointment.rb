@@ -3,6 +3,7 @@ class Appointment < ActiveRecord::Base
   belongs_to :patient
   belongs_to :doctor
   validates_existence_of :patient
+  validate :conflicting_appts
   
   def appt_range
     start_time..end_time
@@ -17,13 +18,10 @@ class Appointment < ActiveRecord::Base
     end 
   end
   
-  protected
-  
-  def validate
-     @appointments = Appointment.all(:conditions => { :date_of_appointment => date_of_appointment, :doctor_id => doctor_id})
-     errors.add_to_base("Appointment Conflict") if @appointments.any? {|appt| appt.appt_range.overlaps? appt_range}
-     logger.info ' IS the validate getting called on the create?'
-
+  private
+  def conflicting_appts
+    @appointments = Appointment.all(:conditions => { :date_of_appointment => date_of_appointment, :doctor_id => doctor_id})
+    errors.add_to_base("Appointment Conflict") if @appointments.any? {|appt| appt.appt_range.overlaps? appt_range}
   end
   
 end
