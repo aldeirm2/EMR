@@ -6,7 +6,9 @@ class Appointment < ActiveRecord::Base
   validate :conflicting_appts
   
   def appt_range
-    start_time..end_time
+    s=Time.local(date_of_appointment.year, date_of_appointment.month, date_of_appointment.day, start_time.hour, start_time.min, start_time.sec)
+    e=Time.local(date_of_appointment.year, date_of_appointment.month, date_of_appointment.day, end_time.hour, end_time.min, end_time.sec)
+   s..e
   end
   
   def tomorrows_appointments
@@ -21,7 +23,10 @@ class Appointment < ActiveRecord::Base
   private
   def conflicting_appts
     @appointments = Appointment.all(:conditions => { :date_of_appointment => date_of_appointment, :doctor_id => doctor_id})
-    errors.add_to_base("Appointment Conflict") if @appointments.any? {|appt| appt.appt_range.overlaps? appt_range}
+    errors.add_to_base("Appointment Conflict") if @appointments.any? do |appt| 
+      logger.info "appt.range == #{appt.appt_range} , my range = #{appt_range}"
+      appt.appt_range.overlaps? appt_range
+    end
   end
   
 end

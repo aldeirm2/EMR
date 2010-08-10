@@ -44,11 +44,11 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = person.appointments.new(params[:appointment])
       respond_to do |format|
-         if @appointment.save!
+         if @appointment.save
             format.html { redirect_to([person, @appointment], :notice => 'Appointment was successfully created.') }
             format.xml  { render :xml => @appointment, :status => :created, :location => @appointment }
          else
-            flash[:notice] = @appointment.full_messages.to_sentence
+            #flash[:notice] = @appointment.full_messages.to_sentence
             format.html { render :action => "new" }
             format.xml  { render :xml => @appointment.errors, :status => :unprocessable_entity }
          end
